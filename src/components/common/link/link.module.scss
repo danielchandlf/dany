@@ -1,0 +1,40 @@
+@import '../../../assets/sass/index';
+
+.link {
+  color: getColor('tertiary-blue.40') !important;
+
+  &:hover {
+    transition: 0.2s;
+    color: getColor('tertiary-blue.60') !important;
+  }
+
+  @each $name, $fontSizeMap in get('font', $fontSize) {
+    @include m(#{$name}) {
+      @include getFontSize('#{$name}');
+    }
+  }
+
+  @each $name, $fontWeight in $fontWeight {
+    @include m(#{$name}) {
+      font-weight: getFontWeight('#{$name}');
+    }
+  }
+
+  @include e(icon-container) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include e(icon) {
+    display: flex;
+    align-items: center;
+
+    @include m(left) {
+      margin-right: 0.5rem;
+    }
+
+    @include m(right) {
+      margin-left: 0.5rem;
+    }
+  }
+}

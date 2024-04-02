@@ -1,0 +1,32 @@
+@import '../../../assets/sass/index';
+
+.tab {
+  @include e(link) {
+    padding: getSpacing('2x') getSpacing('4x');
+    color: getColor('grey.50');
+    font-weight: getFontWeight('normal');
+    @include getFontSize('small');
+
+    &.active,
+    &:hover {
+      color: getColor('tertiary-blue.40');
+      background: getColor('tertiary-blue.5');
+      border-radius: 24px;
+    }
+
+    &.active {
+      font-weight: getFontWeight('semibold');
+    }
+
+    @each $name, $colorMap in $component-color-variants {
+      @include m(#{$name}) {
+        &:hover {
+          color: get('bg-color', $colorMap);
+        }
+        &.active {
+          color: get('bg-color', $colorMap);
+        }
+      }
+    }
+  }
+}

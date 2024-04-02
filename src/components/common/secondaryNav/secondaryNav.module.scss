@@ -1,0 +1,53 @@
+@import '../../../assets/sass/index';
+
+.secondary-nav {
+  background-color: white;
+  box-shadow: 0px 2px 2px rgba(204, 197, 197, 0.25);
+
+  @include e(wrap) {
+    height: 55px;
+    display: flex;
+    align-items: center;
+  }
+  @include e(node) {
+    margin-right: getSpacing('3x');
+    cursor: pointer;
+    @include m(notification) {
+      a {
+        position: relative;
+        &:before {
+          content: '';
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          background-color: #f2af4b;
+          border-radius: 50%;
+          top: 3px;
+          right: 8px;
+          animation: color-flash 3s ease infinite;
+        }
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@keyframes color-flash {
+  60% {
+    background-color: #f2af4b;
+  }
+  70% {
+    background-color: #f28379;
+  }
+  80% {
+    background-color: #f2af4b;
+  }
+  90% {
+    background-color: #f28379;
+  }
+  100% {
+    background-color: #f2af4b;
+  }
+}

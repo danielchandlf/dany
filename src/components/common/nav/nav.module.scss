@@ -1,0 +1,18 @@
+@import '../../../assets/sass/index';
+
+.nav {
+  display: flex;
+
+  @include e(node) {
+    padding: 0 getSpacing('4x');
+  }
+
+  @include e(link) {
+    color: getColor('grey.50');
+    @include getFontSize('body1');
+    font-weight: getFontWeight('semibold');
+    @include m(active) {
+      color: getColor('primary.base');
+    }
+  }
+}

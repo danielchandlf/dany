@@ -1,0 +1,22 @@
+@import '../../../assets/sass/index';
+
+.btn {
+  border: none;
+  background-color: rgb(61, 196, 113);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: red;
+  }
+}
+
+.btn--primary {
+  background-color: rgb(33, 19, 230);
+  color: white;
+
+  &:hover {
+    background-color: rgb(50, 39, 208);
+  }
+}

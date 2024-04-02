@@ -1,0 +1,49 @@
+@import '../../../assets/sass/index';
+
+.navbar {
+  background-color: getColor('white.base');
+
+  @include e(left) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include e(wrap) {
+    display: flex;
+    align-items: center;
+    height: $navbar-height;
+    @include m(content-spread) {
+      justify-content: space-between;
+    }
+
+    @include m(sm) {
+      @include mq(lg) {
+        display: none;
+      }
+    }
+
+    @include m(lg) {
+      display: none;
+
+      @include mq(lg) {
+        display: block;
+      }
+    }
+  }
+
+  @include m(sticky) {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+
+  @include m(bordered-bottom) {
+    border-bottom: 1px solid getColor('tertiary-blue.5');
+  }
+
+  @include e(logo) {
+    width: 156px;
+    height: auto;
+    margin-right: getSpacing('8x');
+  }
+}
